@@ -1,0 +1,6 @@
+<div class="cards">
+    <div class="card" *ngFor="let medicine of medicines">
+        <!-- <app-card [medicine]="medicine"></app-card> -->
+        <app-card [medicine]="medicine" (item)="addToCart($event)"></app-card>
+    </div>
+</div>

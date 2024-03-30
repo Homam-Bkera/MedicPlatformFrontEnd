@@ -1,0 +1,32 @@
+<div class="component-login">
+  <div class="contnet-login">
+    <div class="logo">
+      <p><span>Medic</span>Platform</p>
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="OnSubmitForm(loginForm)" class="form-login">
+      <p class="message-error" *ngIf="invalidLogin">{{error}}</p>
+      <div class="input-control">
+        <span>Number :</span>
+        <input type="tel" name="number" #number="ngModel" placeholder="Number" maxlength="10" minlength="10" ngModel
+          required />
+        <p class="message-wrong" *ngIf="number.invalid && number.dirty&&number.touched">
+          Enter a 10-digit Syrian mobile number
+        </p>
+      </div>
+      <div class="input-control">
+        <span>Password :</span>
+        <input id="password" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password"
+          #password="ngModel" ngModel required />
+        <i (click)="showPassword = !showPassword" [class.hide]="!showPassword"
+          class="icon-show-hide fa fa-eye-slash"></i>
+        <i (click)="showPassword = !showPassword" [class.hide]="showPassword" class="icon-show-hide fa fa-eye"></i>
+      </div>
+      <div class="remeber-me">
+        <input type="checkbox" /><span>Remeber me</span>
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="btn-login">Login</button>
+    </form>
+    <a routerLink="register" class="register">Register now</a>
+  </div>
+  <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

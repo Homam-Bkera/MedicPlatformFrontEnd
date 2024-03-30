@@ -1,0 +1,22 @@
+<div class="cards">
+    <div class="content-cards">
+        <p class="header-cards">All<span>Order</span></p>
+        <table class="tabel-cards">
+            <tr class="title-table">
+                <th class="order-number">Number Order</th>
+                <th class="total-quantity">Total Quantity</th>
+                <th class="total-price">Total Price</th>
+                <th class="date-order">Date</th>
+                <th class="show-details"> Show Details</th>
+            </tr>
+            <tr class="row-table" routerLink="/user/allOrders/detailsOrder/{{order.numberOrder}}"
+                *ngFor="let order of AllOrders">
+                <td class="order-number">{{order.numberOrder}}</td>
+                <td class="total-quantity">{{order.Quantity}}</td>
+                <td class="total-price">{{order.priceTotal|currency:'SY'}}</td>
+                <td class="date-order">{{order.date}}</td>
+                <td class="show-details"><i class="fa fa-info-circle"></i></td>
+            </tr>
+        </table>
+    </div>
+</div>

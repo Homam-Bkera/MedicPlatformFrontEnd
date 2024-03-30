@@ -1,0 +1,99 @@
+.cards {
+    width: 100%;
+    margin-top: 20px;
+
+    .content-cards {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .header-cards {
+            text-align: center;
+            color: var(--main-color);
+            padding: 20px 0px;
+            font-size: 3rem;
+            font-weight: bold;
+
+            span {
+                color: black;
+                font-weight: 100;
+                font-size: 2.5rem;
+            }
+        }
+
+        .tabel-cards {
+            width: 100%;
+            border-spacing: 0px;
+            overflow: hidden;
+
+
+            // width column
+            tr {
+                height: 50px;
+                transition: 0.2s;
+                width: 100%;
+            }
+
+            .order-number {
+                width: 15%;
+                text-align: center;
+            }
+
+            .total-quantity {
+                width: 15%;
+                text-align: center;
+            }
+
+            .total-price {
+                width: 20%;
+                text-align: center;
+            }
+
+            .date-order {
+                width: 35%;
+                text-align: center;
+            }
+
+            .show-details {
+                width: 15%;
+                text-align: center;
+
+                .fa-info-circle {
+                    font-size: 1.2rem;
+                }
+            }
+
+            // -----
+            .title-table {
+                font-size: 1.2rem;
+                background-color: var(--main-color);
+                color: white;
+            }
+
+            .row-table {
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+
+            .row-table:nth-child(even) {
+                background-color: rgba(219, 140, 37, 0.178);
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.01);
+                    background-color: rgba(219, 140, 37, 0.267);
+                }
+            }
+
+            .row-table:nth-child(odd) {
+                background-color: rgba(248, 248, 248, 0.795);
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.01);
+                    background-color: rgb(248, 248, 248);
+                }
+            }
+        }
+    }
+}

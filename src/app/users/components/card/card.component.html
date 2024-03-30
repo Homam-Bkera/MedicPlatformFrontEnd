@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-content">
+        <img class="image-card" alt="image card" [src]="medicine.srcImage">
+        <div class="name-price-card">
+            <p class="name-card">{{medicine.title|stringLenght:[30,'...']|uppercase}}</p>
+            <span class="price-card">{{medicine.price|currency:'L.S '}}</span>
+        </div>
+        <p class="details-card">{{medicine.details|stringLenght:[100,'...']}}</p>
+        <span class="details" routerLink="details/{{medicine.id}}">More Details</span>
+        <span class="by-stroe"><span>By Store : </span>{{medicine.store}}.</span>
+        <button class="add-cart" *ngIf="addButton" (click)="addButton=false">Add Cart</button>
+        <div class="add-amount" *ngIf="!addButton&&!doneAdd">
+            <button class="add" (click)="add()">ADD</button>
+            <input class="amount" type="number" [(ngModel)]="amount">
+        </div>
+        <div class="doneAdd" *ngIf="doneAdd">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            DONE
+        </div>
+    </div>
+</div>

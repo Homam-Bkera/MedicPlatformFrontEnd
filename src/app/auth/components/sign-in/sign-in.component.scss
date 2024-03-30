@@ -1,0 +1,95 @@
+.component-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    .content-register {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 20px 3px #0000002e;
+        width: 40%;
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .form-rigster {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+
+            .input-control {
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                width: 100%;
+
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 1rem;
+                }
+
+                input {
+                    border-radius: 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    height: 2.2rem;
+                    transition: 0.3s ease-in-out;
+                    font-size: 1rem;
+                    padding: 0px 5px;
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+            }
+
+            .btn-register {
+                padding: 10px 30px;
+                border-radius: 25px;
+                border: 0px;
+                color: white;
+                background-color: var(--main-color);
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: 0.3s;
+                display: block;
+                margin: 0px auto;
+                margin-top: 20px;
+                cursor: pointer;
+                border: 1px solid var(--main-color);
+
+                &:hover {
+                    color: var(--main-color);
+                    background-color: white;
+                    border: 1px solid var(--main-color);
+                }
+            }
+
+            .login {
+                text-align: end;
+                font-weight: 500;
+                font-size: 0.9rem;
+                color: var(--main-color);
+                text-decoration: underline;
+                margin-top: 20px;
+            }
+        }
+    }
+}

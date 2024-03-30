@@ -1,0 +1,41 @@
+<div class="component-register">
+    <div class="content-register">
+        <div class="logo">
+            <p><span>Medic</span>Platform</p>
+        </div>
+        <form [formGroup]="FormRegister" (ngSubmit)="onSubmitForm()" class="form-rigster">
+            <div class="username">
+                <div class="input-control">
+                    <span>User Name:</span>
+                    <input formControlName="username" placeholder="First Name And Last Name" type="text">
+                </div>
+            </div>
+            <div class="number">
+                <div class="input-control">
+                    <span>Number:</span>
+                    <input formControlName="number" placeholder="number" type="text">
+                </div>
+            </div>
+            <div class="email">
+                <div class="input-control">
+                    <span>Email:</span>
+                    <input formControlName="email" placeholder="email" type="text">
+                </div>
+            </div>
+            <div class="password">
+                <div class="input-control">
+                    <span>Password:</span>
+                    <input formControlName="password" placeholder="password" type="text">
+                </div>
+            </div>
+            <div class="confirm-password">
+                <div class="input-control">
+                    <span>Confirm Password:</span>
+                    <input formControlName="confirmPassword" placeholder="confirm password" type="text">
+                </div>
+            </div>
+            <button [disabled]="!FormRegister.valid" class="btn-register">Register</button>
+            <a routerLink="login" routerLinkActive="router-link-active" class="login">Login Now</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div *ngIf="AuthService.islogged">
+    <div class="content-navigation">
+        <div class="start">
+            <div class="togle-slide-navigation" (click)="isHide=!isHide"><span></span><span></span><span></span></div>
+            <div class="logo">
+                <p><span>Medic</span>Platform</p>
+            </div>
+        </div>
+        <div class="center">
+            <ul class="navigation">
+                <li class="nav" routerLink="user"><a>Home</a></li>
+                <li class="nav" routerLink="user/storages"><a>Storages</a></li>
+                <li class="nav" routerLink="routePath"><a>About Us</a></li>
+                <li class="nav" routerLink="routePath"><a>Content Us</a></li>
+            </ul>
+        </div>
+        <div class="end">
+            <div class="cart" routerLink="user/cart"><span>1</span><i class="fa fa-shopping-cart"></i></div>
+            <div class="notification" routerLink="user/notification"><span>1</span><i class="fa fa-bell"></i></div>
+        </div>
+    </div>
+</div>
+
+<div class="navigation-slide" [ngClass]="togleNavicationSlide()">
+    <div class="content-slide">
+        <ul>
+            <div class="logo">
+                <p><span>Medic</span>Platform</p>
+            </div>
+            <li routerLink="user/allMedicine"><i class="fa fa-list-alt"></i>All Medicine</li>
+            <li routerLink="user/allOrders"><i class="fa fa-list-ol"></i>All Order</li>
+            <li routerLink="user/cart"><i class="fa fa-shopping-cart"></i> Cart</li>
+            <li routerLink="user/notification"><i class="fa fa-bell"></i> Notification</li>
+            <li routerLink="user/search"><i class="fa fa-search"></i>Search</li>
+            <li class="line"></li>
+            <li><i class="fa fa-language"></i> Change Language</li>
+            <li><i class="fa fa-cog"></i>Setting</li>
+            <li class="line"></li>
+            <li><i class="fa fa-user-circle"></i>User Account</li>
+            <li><i class="fa fa-sign-out"></i>Sign out</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="cart">
+    <div class="content-cart">
+        <p class="header-cart">C<span>art</span></p>
+        <table class="tabel-order">
+            <tr class="title-table">
+                <th class="image">Image</th>
+                <th class="name">Name</th>
+                <th class="price">Price</th>
+                <th class="quantity">Quantity</th>
+                <th class="total-price">Total Price</th>
+                <th class="delete">Delete</th>
+            </tr>
+            <tr class="row-table" *ngFor="let item of cart">
+                <th class="image"><img src={{item.image}} alt="image for medic"></th>
+                <th class="name">{{item.name}}</th>
+                <th class="price">{{item.price}}</th>
+                <th class="quantity"><input type="num" value="{{item.quantity}}"></th>
+                <th class="total-price">{{item.totalPrice}}</th>
+                <th class="delete"><i class="fa fa-trash"></i></th>
+            </tr>
+        </table>
+    </div>
+</div>
