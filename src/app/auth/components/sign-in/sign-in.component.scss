@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 62px);
     width: 100%;
 
     .content-register {
@@ -27,10 +27,18 @@
             flex-direction: column;
             margin-top: 15px;
 
+            .message-error {
+                background-color: rgba(246, 42, 6, 0.459);
+                padding: 10px;
+                margin: 5px;
+                border-radius: 8px;
+            }
+
             .input-control {
                 width: 300px;
                 display: flex;
                 flex-direction: column;
+                position: relative;
                 margin-top: 15px;
                 width: 100%;
 
@@ -57,6 +65,21 @@
                         background-color: rgba(161, 109, 41, 0.007);
                         outline: 1px solid var(--main-color);
                     }
+                }
+
+                .message-wrong {
+                    background-color: rgb(246 122 6 / 29%);
+                    padding: 10px;
+                    margin: 5px;
+                    border-radius: 8px;
+                }
+
+                input[type="text"] {
+                    font: large Verdana, sans-serif;
+                }
+
+                input[type="password"] {
+                    font: large Verdana, sans-serif;
                 }
             }
 
@@ -90,6 +113,32 @@
                 text-decoration: underline;
                 margin-top: 20px;
             }
+
+            .hide {
+                display: none;
+            }
+
+            .icon-show-hide {
+                position: absolute;
+                right: 13px;
+                top: 33px;
+                transition: 0.3s;
+
+                &:hover {
+                    filter: drop-shadow(0px 0px 5px var(--main-color));
+                }
+            }
         }
+    }
+
+    #spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: calc(100vh - 62px);
+        position: absolute;
+        z-index: 11;
+        background-color: rgba(255, 255, 255, 0.568);
     }
 }

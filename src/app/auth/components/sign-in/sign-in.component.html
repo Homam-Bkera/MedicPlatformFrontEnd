@@ -4,38 +4,65 @@
             <p><span>Medic</span>Platform</p>
         </div>
         <form [formGroup]="FormRegister" (ngSubmit)="onSubmitForm()" class="form-rigster">
+            <p class="message-error" *ngIf="error">{{error}}</p>
             <div class="username">
                 <div class="input-control">
                     <span>User Name:</span>
                     <input formControlName="username" placeholder="First Name And Last Name" type="text">
+                    <p class="message-wrong"
+                        *ngIf="FormRegister.controls['username'].invalid&&FormRegister.controls['username'].touched&&FormRegister.controls['username'].dirty">
+                        Enter your name</p>
                 </div>
             </div>
-            <div class="number">
+            <div class="phone">
                 <div class="input-control">
-                    <span>Number:</span>
-                    <input formControlName="number" placeholder="number" type="text">
+                    <span>phone:</span>
+                    <input formControlName="phone" placeholder="phone" type="text">
+                    <p class="message-wrong"
+                        *ngIf="FormRegister.controls['phone'].invalid&&FormRegister.controls['phone'].touched&&FormRegister.controls['phone'].dirty">
+                        Enter a
+                        ten-digit phone number</p>
                 </div>
             </div>
-            <div class="email">
+            <!-- <div class="email">
                 <div class="input-control">
                     <span>Email:</span>
                     <input formControlName="email" placeholder="email" type="text">
                 </div>
-            </div>
+            </div> -->
             <div class="password">
                 <div class="input-control">
                     <span>Password:</span>
-                    <input formControlName="password" placeholder="password" type="text">
+                    <input formControlName="password" [type]="showPassword ? 'text' : 'password'"
+                        placeholder="password">
+                    <i (click)="showPassword = !showPassword" [class.hide]="!showPassword"
+                        class="icon-show-hide fa fa-eye-slash"></i>
+                    <i (click)="showPassword = !showPassword" [class.hide]="showPassword"
+                        class="icon-show-hide fa fa-eye"></i>
+                    <p class="message-wrong"
+                        *ngIf="FormRegister.get('password')?.invalid&&FormRegister.get('password')?.touched&&FormRegister.get('password')?.dirty">
+                        Enter a password longer than 5 characters
+                    </p>
                 </div>
             </div>
             <div class="confirm-password">
                 <div class="input-control">
                     <span>Confirm Password:</span>
-                    <input formControlName="confirmPassword" placeholder="confirm password" type="text">
+                    <input formControlName="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'"
+                        placeholder="confirm password">
+                    <i (click)="showConfirmPassword = !showConfirmPassword" [class.hide]="!showConfirmPassword"
+                        class="icon-show-hide fa fa-eye-slash"></i>
+                    <i (click)="showConfirmPassword = !showConfirmPassword" [class.hide]="showConfirmPassword"
+                        class="icon-show-hide fa fa-eye"></i>
+                    <p class="message-wrong"
+                        *ngIf="FormRegister?.errors?.['mismatch']&&FormRegister.get('confirmPassword')?.touched">
+                        password does not
+                        match</p>
                 </div>
             </div>
-            <button [disabled]="!FormRegister.valid" class="btn-register">Register</button>
+            <button [disabled]="FormRegister.invalid" class="btn-register">Register</button>
             <a routerLink="login" routerLinkActive="router-link-active" class="login">Login Now</a>
         </form>
     </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
 </div>

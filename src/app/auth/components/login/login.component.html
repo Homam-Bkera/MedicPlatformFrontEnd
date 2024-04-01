@@ -4,7 +4,7 @@
       <p><span>Medic</span>Platform</p>
     </div>
     <form #loginForm="ngForm" (ngSubmit)="OnSubmitForm(loginForm)" class="form-login">
-      <p class="message-error" *ngIf="invalidLogin">{{error}}</p>
+      <p class="message-error" *ngIf="invalidLogin&&error!=undefined">{{error}}</p>
       <div class="input-control">
         <span>Number :</span>
         <input type="tel" name="number" #number="ngModel" placeholder="Number" maxlength="10" minlength="10" ngModel
