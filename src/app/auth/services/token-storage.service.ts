@@ -11,8 +11,8 @@ export class TokenStorageService {
     sessionStorage.setItem('TOKEN', token);
   }
 
-  getToken(): string | null {
-    return sessionStorage.getItem('TOKEN');
+  getToken(): string {
+    return sessionStorage.getItem('TOKEN')!;
   }
 
 }

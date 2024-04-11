@@ -11,6 +11,8 @@ import { DetailsCardComponent } from "./components/details-card/details-card.com
 import { DetailsOrderComponent } from "./components/details-order/details-order.component";
 import { NotificationComponent } from "../shared/components/notification/notification.component";
 import { DetailsNotificationComponent } from "../shared/components/details-notification/details-notification.component";
+import { ProfileComponent } from "../shared/components/profile/profile.component";
+import { EditProfileComponent } from "../shared/components/edit-profile/edit-profile.component";
 
 export const USERS_ROUTES: Routes = [
     { path: '', component: HomeComponent },
@@ -25,5 +27,7 @@ export const USERS_ROUTES: Routes = [
     { path: 'allOrders/detailsOrder/:order', component: DetailsOrderComponent },
     { path: 'notification', component: NotificationComponent },
     { path: 'notification/:detailsNotification', component: DetailsNotificationComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'editProfile', component: EditProfileComponent },
     { path: '**', redirectTo: '', pathMatch: "full" },
 ];

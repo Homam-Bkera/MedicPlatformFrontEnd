@@ -27,6 +27,7 @@
             <div class="logo">
                 <p><span>Medic</span>Platform</p>
             </div>
+            <li class="ChargeWallet"><i class="fa fa-money"></i>Wallet {{userWallet}}</li>
             <li routerLink="user/allMedicine"><i class="fa fa-list-alt"></i>All Medicine</li>
             <li routerLink="user/allOrders"><i class="fa fa-list-ol"></i>All Order</li>
             <li routerLink="user/cart"><i class="fa fa-shopping-cart"></i> Cart</li>
@@ -36,7 +37,7 @@
             <li><i class="fa fa-language"></i> Change Language</li>
             <li><i class="fa fa-cog"></i>Setting</li>
             <li class="line"></li>
-            <li><i class="fa fa-user-circle"></i>User Account</li>
+            <li routerLink="{{role}}/profile"><i class="fa fa-user-circle"></i>Pofile</li>
             <li><i class="fa fa-sign-out"></i>Sign out</li>
         </ul>
     </div>

@@ -1,0 +1,89 @@
+<div class="component-edit-profile">
+    <div class="content-edit-profile">
+        <div class="col-photo">
+            <i class='fa fa-user-circle'></i>
+        </div>
+        <div class="col-edit-account">
+            <h1>Accounting Setting</h1>
+            <form [formGroup]="FormUpdate" (ngSubmit)="onSubmitForm()">
+                <div class="form form-edit-name">
+                    <h2>- Edit User Name</h2>
+                    <p>If you want to change your user name on the platform, you can enter the new user name</p>
+                    <div class="controls">
+                        <div class="input-control">
+                            <span>New User Name :</span>
+                            <input type="text" placeholder="New User Name" formControlName="newUserName">
+                        </div>
+                        <div class="input-control">
+                            <span>Confirm User Name :</span>
+                            <input type="text" placeholder="Confirm User Name" formControlName="confrimUserName">
+                        </div>
+                        <p class="message-wrong" *ngIf="FormUpdate.get('newUserName')?.dirty&&
+                        FormUpdate.get('confrimUserName')?.dirty&&
+                        FormUpdate.get('newUserName')?.touched&&
+                        FormUpdate.get('confrimUserName')?.touched&&
+                        FormUpdate.get('newUserName')?.value!=FormUpdate.get('confrimUserName')?.value">
+                            Username does not match in the
+                            previous two fields</p>
+                    </div>
+                </div>
+                <div class="form form-edit-phone">
+                    <h2>- Edit Phone</h2>
+                    <p>If you want to change your phone on the platform, you can enter the new phone</p>
+                    <div class="controls">
+                        <div class="input-control">
+                            <span>New Phone :</span>
+                            <input type="text" placeholder="New Phone" formControlName="newPhone">
+                        </div>
+                        <div class="input-control">
+                            <span>Confirm Phone :</span>
+                            <input type="text" placeholder="Confirm Phone" formControlName="confrimPhone">
+                        </div>
+                        <p class="message-wrong" *ngIf="FormUpdate.get('newPhone')?.dirty&&
+                        FormUpdate.get('confrimPhone')?.dirty&&
+                        FormUpdate.get('newPhone')?.touched&&
+                        FormUpdate.get('confrimPhone')?.touched&&
+                        FormUpdate.get('newPhone')?.value!=FormUpdate.get('confrimPhone')?.value">Phone does not
+                            match in the
+                            previous two fields</p>
+                        <p class="message-error" *ngIf="FormUpdate.get('newPhone')?.dirty&&
+                        FormUpdate.get('confrimPhone')?.dirty&&
+                        FormUpdate.get('newPhone')?.touched&&
+                        FormUpdate.get('confrimPhone')?.touched&&
+                        FormUpdate.get('newPhone')?.invalid">The phone number must be 10 digits <strong>ex:
+                                0912345678</strong></p>
+                    </div>
+                </div>
+                <div class="form form-edit-password">
+                    <h2>- Edit Password</h2>
+                    <p>If you want to change your password on the platform, you can enter the new password</p>
+                    <div class="controls">
+                        <div class="input-control">
+                            <span>New Password :</span>
+                            <input type="text" placeholder="New Password" formControlName="newPassword">
+                        </div>
+                        <div class="input-control">
+                            <span>Confirm Password :</span>
+                            <input type="text" placeholder="Confirm Password" formControlName="confrimPassword">
+                        </div>
+                        <p class="message-wrong" *ngIf="FormUpdate.get('newPassword')?.dirty&&
+                        FormUpdate.get('confrimPassword')?.dirty&&
+                        FormUpdate.get('newPassword')?.touched&&
+                        FormUpdate.get('confrimPassword')?.touched&&
+                        FormUpdate.get('newPassword')?.value!=FormUpdate.get('confrimPassword')?.value">Password does
+                            not match in the
+                            previous two fields</p>
+                        <p class="message-error" *ngIf="FormUpdate.get('newPassword')?.dirty&&
+                        FormUpdate.get('confrimPassword')?.dirty&&
+                        FormUpdate.get('newPassword')?.touched&&
+                        FormUpdate.get('confrimPassword')?.touched&&
+                        FormUpdate.get('newPassword')?.invalid">The password must be at least 5 characters long</p>
+                    </div>
+                </div>
+                <p class="message-error" *ngIf="failedUpdate">Failed Update Information, Try Again</p>
+                <button>Apply change</button>
+            </form>
+        </div>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

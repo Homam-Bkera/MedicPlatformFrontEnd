@@ -15,11 +15,10 @@ export class AuthService {
 
   islogged: boolean = false;
 
-  //Injection
-  http = inject(HttpClient);
 
   constructor(
-    public tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private http: HttpClient,
   ) {
   }
 
@@ -32,21 +31,12 @@ export class AuthService {
   }
 
   logout() {
-
   }
 
   isLogged() {
     if (this.tokenStorage.getToken() && this.getRole()) {
       this.islogged = true;
     }
-  }
-
-  getChargeWallet(token: string) {
-    return this.http.post(`${baseUrl}/user/chargeWallet`, 250, {
-      headers: {
-        Authorization: token,
-      }
-    });
   }
 
   setRole(role: string): void {

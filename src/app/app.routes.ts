@@ -2,11 +2,14 @@ import { Routes } from '@angular/router';
 import { authUserGuard } from './auth/guards/auth-user.guard';
 import { authAdminGuard } from './auth/guards/auth-admin.guard';
 import { authSuperAdminGuard } from './auth/guards/auth-super-admin.guard';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { auth } from './auth/guards/auth.guard';
 
 export const routes: Routes = [
     {
         path: 'auth',
         loadChildren: () => import('./auth/auth.routes').then(r => r.AUTH_ROUTES),
+        canActivate: [auth],
     },
     {
         path: 'user',
@@ -23,5 +26,6 @@ export const routes: Routes = [
         loadChildren: () => import('./super-admin/super-admin.routes').then(r => r.SUPER_ADMIN_ROUTES),
         canActivate: [authSuperAdminGuard],
     },
-    { path: '**', redirectTo: 'auth', pathMatch: "full" },
+    { path: "", redirectTo: 'auth', pathMatch: 'full' },
+    { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];

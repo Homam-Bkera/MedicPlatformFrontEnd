@@ -1,0 +1,24 @@
+<div class="profile">
+    <p class="title-page"><span>P</span>rofile</p>
+    <div class="container-profile">
+        <div class="info-section">
+            <h2 class="title-section"> Information</h2>
+            <div class="info">
+                <p class="name">Name : <span>{{profile?.data?.name}}</span> </p>
+                <p class="phone">Phone : <span>{{profile?.data?.phone}}</span></p>
+                <p class="role">Role : <span>{{profile?.data?.role}}</span></p>
+                <p class="created-account">Create At : <span>{{profile?.data?.createdAt |date :'short'}}</span></p>
+                <p class="upadated-account">Last Update : <span>{{profile?.data?.updatedAt|date :'short'}}</span></p>
+                <a class="link" routerLink="/{{role}}/editProfile"> Edit Profile</a>
+            </div>
+        </div>
+        <div class="cash-section">
+            <h2 class="title-section">Cash</h2>
+            <div class="cash">
+                <p class="current-cash">Current Cash :<span>{{profile?.data?.Wallet?.cash}}</span></p>
+                <p class="last-charge">Last Charge :<span>{{profile?.data?.Wallet?.createdAt}}</span></p>
+                <a class="link"> Charge Wallet</a>
+            </div>
+        </div>
+    </div>
+</div>
