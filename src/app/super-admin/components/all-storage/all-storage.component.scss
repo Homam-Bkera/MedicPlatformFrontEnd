@@ -1,0 +1,23 @@
+.comoponent-all-storages {
+    .cotent-all-storages {
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+
+            span {
+                color: var(--main-color);
+            }
+        }
+
+        .all-storages {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+}

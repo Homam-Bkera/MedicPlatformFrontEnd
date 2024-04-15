@@ -1,0 +1,144 @@
+.component-register-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .content-register-admin {
+        padding: 20px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 5px;
+
+            span,
+            p {
+                font-size: 2.1rem;
+                font-weight: bold;
+            }
+        }
+
+        .form-rigster-admin {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+
+            .message-error {
+                background-color: rgba(246, 42, 6, 0.459);
+                padding: 10px;
+                margin: 5px;
+                border-radius: 8px;
+            }
+
+            .storageId {
+                .dropdown {
+                    padding: 5px;
+                    font-size: 1rem;
+                }
+            }
+
+            .input-control {
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                margin-top: 15px;
+                width: 100%;
+
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 1rem;
+                }
+
+                input {
+                    border-radius: 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    height: 2.2rem;
+                    transition: 0.3s ease-in-out;
+                    font-size: 1rem;
+                    padding: 0px 5px;
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+
+                .message-wrong {
+                    background-color: rgb(246 122 6 / 29%);
+                    padding: 10px;
+                    margin: 5px;
+                    border-radius: 8px;
+                }
+
+                input[type="text"] {
+                    font: large Verdana, sans-serif;
+                }
+
+                input[type="password"] {
+                    font: large Verdana, sans-serif;
+                }
+            }
+
+            .btn-register-admin {
+                padding: 10px 30px;
+                border-radius: 25px;
+                border: 0px;
+                color: white;
+                background-color: var(--main-color);
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: 0.3s;
+                display: block;
+                margin: 0px auto;
+                margin-top: 20px;
+                cursor: pointer;
+                border: 1px solid var(--main-color);
+
+                &:hover {
+                    color: var(--main-color);
+                    background-color: white;
+                    border: 1px solid var(--main-color);
+                }
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .icon-show-hide {
+                position: absolute;
+                right: 13px;
+                top: 33px;
+                transition: 0.3s;
+
+                &:hover {
+                    filter: drop-shadow(0px 0px 5px var(--main-color));
+                }
+            }
+        }
+    }
+
+    #spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: calc(100vh - 62px);
+        position: absolute;
+        z-index: 11;
+        background-color: rgba(255, 255, 255, 0.568);
+    }
+}

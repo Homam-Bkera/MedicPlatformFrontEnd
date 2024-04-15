@@ -1,0 +1,89 @@
+.component-create-storage {
+    .content-create-storage {
+        .title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+
+            span {
+                color: var(--main-color);
+            }
+        }
+
+        .form-create-storage {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+
+            .input-control {
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 1.1rem;
+                }
+
+                input {
+                    border-radius: 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    height: 2.2rem;
+                    transition: 0.3s ease-in-out;
+                    font-size: 1rem;
+                    padding: 0px 5px;
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+            }
+
+            .btn-create-storage {
+                padding: 10px 30px;
+                border-radius: 25px;
+                border: 0px;
+                color: white;
+                background-color: var(--main-color);
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: 0.3s;
+                display: block;
+                margin: 0px auto;
+                margin-top: 30px;
+                cursor: pointer;
+                border: 1px solid var(--main-color);
+
+                &:hover {
+                    color: var(--main-color);
+                    background-color: white;
+                    border: 1px solid var(--main-color);
+                }
+            }
+
+            .message-error {
+                background-color: rgba(246, 42, 6, 0.459);
+                padding: 10px;
+                margin: 5px;
+                border-radius: 8px;
+                font-weight: bold;
+            }
+
+            .message-success {
+                background-color: rgb(100 155 11 / 36%);
+                padding: 30px 10px;
+                margin: 5px;
+                border-radius: 8px;
+                margin-top: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.compontnet-update-storage {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    .contnet-update-storage {
+        .title {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+
+            span {
+                color: var(--main-color);
+            }
+        }
+
+        .input-control {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+            position: relative;
+
+            h3 {
+                margin-top: 30px;
+                border-bottom: 1px solid black;
+                padding-bottom: 5px;
+                color: var(--main-color);
+            }
+
+            p {
+                opacity: 0.7;
+                margin: 10px 0px;
+            }
+
+            span {
+                font-weight: 500;
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+
+            input {
+                border-radius: 7px;
+                border: 1px solid rgb(204, 202, 202);
+                height: 2.2rem;
+                transition: 0.3s ease-in-out;
+                font-size: 1rem;
+                padding: 0px 5px;
+
+                &:hover {
+                    background-color: rgba(161, 109, 41, 0.007);
+                    outline: 1px solid var(--main-color);
+                }
+
+                &:focus {
+                    background-color: rgba(161, 109, 41, 0.007);
+                    outline: 1px solid var(--main-color);
+                }
+            }
+
+            input[type="text"] {
+                font: large Verdana, sans-serif;
+            }
+
+            input[type="password"] {
+                font: large Verdana, sans-serif;
+            }
+        }
+
+        .apply-change {
+            padding: 10px 20px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 7px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 1px solid var(--main-color);
+            background-color: var(--main-color);
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: white;
+                color: var(--main-color);
+            }
+        }
+
+        .message-error {
+            background-color: rgba(246, 42, 6, 0.459);
+            padding: 10px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .message-success {
+            background-color: rgb(100 155 11 / 36%);
+            padding: 30px 10px;
+            margin: 5px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .note {
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+    }
+
+    #spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 11;
+        background-color: rgba(255, 255, 255, 0.568);
+    }
+}

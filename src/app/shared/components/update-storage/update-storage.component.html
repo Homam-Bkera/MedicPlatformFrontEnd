@@ -1,0 +1,27 @@
+<div class="compontnet-update-storage">
+    <form #updateStore="ngForm" (ngSubmit)="applyChange(updateStore)" class="contnet-update-storage">
+        <h1 class="title">- <span>Update</span> Store -</h1>
+        <div class="input-control">
+            <h3>- Edit Name :</h3>
+            <p>If you want to change the name of the store, enter the new name.</p>
+            <span>New name :</span>
+            <input type="text" name="name" #name="ngModel" ngModel placeholder="Enter the name of the store" />
+        </div>
+        <div class="input-control">
+            <h3>- Edit location :</h3>
+            <p>If you want to change the location of the store, enter the new loaction.</p>
+            <span>New loactino :</span>
+            <input type="text" name="location" #location="ngModel" ngModel
+                placeholder="Enter the loaction of the store" />
+        </div>
+        <button [disabled]="!updateStore.value.name&&!updateStore.value.location" class="apply-change">Apply
+            change</button>
+        <p class="note">Note: At least one field must be entered</p>
+
+        <p class="message-success" *ngIf="successCreateStorage">The store has been modify successfully</p>
+        <p class="message-error" *ngIf="errorCreateStorage">Failed to modify storage space, try again</p>
+
+
+    </form>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

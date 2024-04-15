@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { TokenStorageService } from '../../services/token-storage.service';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { TokenStorageService } from '../../services/token-storage.service';
   styleUrl: './login.component.scss'
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   showPassword: boolean = false;
   invalidLogin: boolean = false;
@@ -34,13 +35,10 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-  }
 
   OnSubmitForm(form: any) {
     this.visibleSpinner = true;
-    this.user.phone = form.value.number;
-    this.user.password = form.value.password;
+    this.bindingData(form);
     this.AuthService.login(this.user).subscribe(res => {
       this.tokenStorage.setToken(res.token);
       this.AuthService.setRole(res.data.role)
@@ -61,5 +59,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.router.navigate(['/user']);
     }
+  }
+
+  bindingData(form: any) {
+    this.user.phone = form.value.number;
+    this.user.password = form.value.password;
   }
 }

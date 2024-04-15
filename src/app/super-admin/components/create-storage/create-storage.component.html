@@ -1,0 +1,29 @@
+<div class="component-create-storage">
+    <div class="content-create-storage">
+        <h1 class="title"><span>Create </span>Storage</h1>
+        <form class="form-create-storage" #createStorage="ngForm" (ngSubmit)="onSumitForm(createStorage)">
+            <div class="input-control">
+                <span>Name Storage :</span>
+                <input type="text" placeholder="Input Name Storage" name="name" #name="ngModel" minlength="3" ngModel
+                    required>
+                <p class="message-error" *ngIf="!name.valid&&name.touched&&name.dirty">The name must be at least 3
+                    characters long</p>
+            </div>
+
+
+            <div class="input-control">
+                <span>Location Storage:</span>
+                <input type="text" placeholder="Input Location Storage" name="location" #location="ngModel"
+                    minlength="5" ngModel required>
+                <p class="message-error" *ngIf="!location.valid&&location.touched&&location.dirty">The location must be
+                    at least 5 characters
+                    long
+                </p>
+
+            </div>
+            <button class="btn-create-storage" type="submit" [disabled]="createStorage.invalid">Create Storage</button>
+            <p class="message-success" *ngIf="successCreateStorage">storage created</p>
+            <p class="message-error" *ngIf="errorCreateStorage">Failed to create storage, try again</p>
+        </form>
+    </div>
+</div>

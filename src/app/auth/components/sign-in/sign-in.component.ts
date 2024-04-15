@@ -43,7 +43,6 @@ export class SignInComponent implements OnInit {
     this.FormRegister = new FormGroup({
       username: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
-      // email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(5)]),
       confirmPassword: new FormControl('', [Validators.required]),
     }, {

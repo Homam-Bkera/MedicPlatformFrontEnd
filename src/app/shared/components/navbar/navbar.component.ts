@@ -15,7 +15,7 @@ import { WalletService } from '../../../auth/services/wallet.service';
 export class NavbarComponent {
   isHide = true;
   userWallet: string = '';
-  role: string | null = '';
+  role: any;
 
   constructor(
     public AuthService: AuthService,

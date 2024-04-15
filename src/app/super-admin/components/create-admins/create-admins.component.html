@@ -1,16 +1,15 @@
-<div class="component-register">
-    <div class="content-register">
+<div class="component-register-admin">
+    <div class="content-register-admin">
         <div class="logo">
-            <p><span>Medic</span>Platform</p>
+            <p>Create<span> Admin</span></p>
         </div>
-        <form [formGroup]="FormRegister" (ngSubmit)="onSubmitForm()" class="form-rigster">
-            <p class="message-error" *ngIf="error">{{error}}</p>
+        <form class="form-rigster-admin" [formGroup]="FormRegisterAdmin" (ngSubmit)="onSubmitForm()">
             <div class="username">
                 <div class="input-control">
                     <span>User Name:</span>
                     <input formControlName="username" placeholder="First Name And Last Name" type="text">
                     <p class="message-wrong"
-                        *ngIf="FormRegister.controls['username'].invalid&&FormRegister.controls['username'].touched&&FormRegister.controls['username'].dirty">
+                        *ngIf="FormRegisterAdmin.controls['username'].invalid&&FormRegisterAdmin.controls['username'].touched&&FormRegisterAdmin.controls['username'].dirty">
                         Enter your name</p>
                 </div>
             </div>
@@ -19,9 +18,19 @@
                     <span>phone:</span>
                     <input formControlName="phone" placeholder="phone" type="text">
                     <p class="message-wrong"
-                        *ngIf="FormRegister.controls['phone'].invalid&&FormRegister.controls['phone'].touched&&FormRegister.controls['phone'].dirty">
+                        *ngIf="FormRegisterAdmin.controls['phone'].invalid&&FormRegisterAdmin.controls['phone'].touched&&FormRegisterAdmin.controls['phone'].dirty">
                         Enter a
                         ten-digit phone number</p>
+                </div>
+            </div>
+            <div class="storageId">
+                <div class="input-control">
+                    <span>Select storage:</span>
+                    <select class="dropdown" [(ngModel)]="selectedStorageId" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let storage of allStorage" [value]="storage.id" [selected]="storage.id">
+                            id :{{storage.id}} | name: {{storage.name}}
+                        </option>
+                    </select>
                 </div>
             </div>
             <div class="password">
@@ -34,7 +43,7 @@
                     <i (click)="showPassword = !showPassword" [class.hide]="showPassword"
                         class="icon-show-hide fa fa-eye"></i>
                     <p class="message-wrong"
-                        *ngIf="FormRegister.get('password')?.invalid&&FormRegister.get('password')?.touched&&FormRegister.get('password')?.dirty">
+                        *ngIf="FormRegisterAdmin.get('password')?.invalid&&FormRegisterAdmin.get('password')?.touched&&FormRegisterAdmin.get('password')?.dirty">
                         Enter a password longer than 5 characters
                     </p>
                 </div>
@@ -49,13 +58,14 @@
                     <i (click)="showConfirmPassword = !showConfirmPassword" [class.hide]="showConfirmPassword"
                         class="icon-show-hide fa fa-eye"></i>
                     <p class="message-wrong"
-                        *ngIf="FormRegister?.errors?.['mismatch']&&FormRegister.get('confirmPassword')?.touched">
+                        *ngIf="FormRegisterAdmin?.errors?.['mismatch']&&FormRegisterAdmin.get('confirmPassword')?.touched">
                         password does not
                         match</p>
                 </div>
             </div>
-            <button [disabled]="FormRegister.invalid" class="btn-register">Register</button>
-            <a routerLink="login" routerLinkActive="router-link-active" class="login">Login Now</a>
+            <button [disabled]="FormRegisterAdmin.invalid||selectedStorageId==0"
+                class="btn-register-admin">Register</button>
+            <p *ngIf="error" class="message-error">The user number already exists, choose another number</p>
         </form>
     </div>
     <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>

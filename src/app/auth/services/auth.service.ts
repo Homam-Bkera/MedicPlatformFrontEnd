@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { register } from '../interfaces/register';
 import { TokenStorageService } from './token-storage.service';
 import { Observable } from 'rxjs';
+import { CreateAdminInterface } from '../../super-admin/interfaces/create-admin.interface';
 
 const baseUrl = 'https://medicplatformbackend.onrender.com';
 
@@ -30,6 +31,10 @@ export class AuthService {
     return this.http.post(`${baseUrl}/user`, credentials);
   }
 
+  registerAdmin(credentials: CreateAdminInterface) {
+    return this.http.post(`${baseUrl}/user`, credentials);
+  }
+
   logout() {
   }
 
@@ -43,7 +48,7 @@ export class AuthService {
     sessionStorage.setItem('ROLE', role);
   }
 
-  getRole(): string | null {
+  getRole() {
     return sessionStorage.getItem('ROLE');
   }
 

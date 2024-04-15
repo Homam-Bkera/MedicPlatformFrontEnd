@@ -1,0 +1,10 @@
+<div class="comoponent-all-storages">
+    <div class="cotent-all-storages">
+        <h1 class="title">- <span>All</span> Storage -</h1>
+        <div class="all-storages">
+            <div class="storage" *ngFor="let storage of allStorages">
+                <app-storage-card class="card" [data]="storage"></app-storage-card>
+            </div>
+        </div>
+    </div>
+</div>
