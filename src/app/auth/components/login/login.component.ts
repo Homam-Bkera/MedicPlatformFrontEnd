@@ -5,7 +5,6 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 import { TokenStorageService } from '../../services/token-storage.service';
-import { from } from 'rxjs';
 
 
 @Component({
@@ -42,8 +41,9 @@ export class LoginComponent {
     this.AuthService.login(this.user).subscribe(res => {
       this.tokenStorage.setToken(res.token);
       this.AuthService.setRole(res.data.role)
-      this.navigate(res.data.role);
+      this.AuthService.setStorageId(res.data.StorageAdmins[0].storageId)
       this.AuthService.isLogged();
+      this.navigate(res.data.role);
     }, err => {
       this.error = err.error.message;
       this.visibleSpinner = false;

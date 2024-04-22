@@ -1,0 +1,29 @@
+<div class="component-storage">
+    <div class="content-storage">
+        <div class="title">
+            <h1><span>S</span>torage</h1>
+        </div>
+        <div class="add-category">
+            <form #addCategory="ngForm" (ngSubmit)="OnSubmitForm(addCategory)">
+                <input type="text" name="name" #name="ngModel" ngModel required>
+                <button>Add Category</button>
+            </form>
+        </div>
+        <div class="all-category">
+            <h4>All Category</h4>
+            <div class="categories">
+                <div class="category" *ngFor="let category of categories">
+                    <span class="name-category">{{category.name}}</span>
+                    <div class="links-category">
+                        <a class="delete" (click)="deletCategory(category.id)">Delete</a>
+                        <a class="view" (click)="setCategoryId(category.id)" routerLink="../view-category">View</a>
+                        <a class="update" (click)="setCategoryId(category.id)"
+                            routerLink="../update-category">Update</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+
+</div>

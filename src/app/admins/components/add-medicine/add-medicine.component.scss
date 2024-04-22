@@ -1,0 +1,140 @@
+.component-add-medicicine {
+    .title {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        font-size: 2rem;
+
+        span {
+            color: var(--main-color);
+        }
+    }
+
+    .content-add-medicine {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .image-medicine {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 70%;
+                padding: 20px 50px;
+
+            }
+        }
+
+        .info-medicine {
+            width: 70%;
+
+            .input-control {
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                margin-bottom: 30px;
+                width: 100%;
+
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 1rem;
+                }
+
+                input {
+                    border-radius: 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    height: 2.2rem;
+                    transition: 0.3s ease-in-out;
+                    font-size: 1rem;
+                    padding: 0px 5px;
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+
+                select {
+                    padding: 7px;
+                    border-radius: 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    // color: rgba(0, 0, 0, 0.479);
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .btn-add {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 30px;
+        border-radius: 25px;
+        border: 0px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: var(--main-color);
+        border: 1px solid var(--main-color);
+
+        &:hover {
+            color: var(--main-color);
+            background-color: white;
+            border: 1px solid var(--main-color);
+        }
+    }
+
+    @media (max-width:900px) {
+        .content-add-medicine {
+            flex-direction: column;
+
+            .image-medicine {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 40%;
+                    padding: 20px 50px;
+
+                }
+            }
+
+            .info-medicine {
+                width: 100%;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .message-wrong {
+        background-color: rgb(246 122 6 / 29%);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+    }
+}

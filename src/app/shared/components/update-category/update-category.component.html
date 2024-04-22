@@ -1,0 +1,14 @@
+<div class="component-update-category">
+    <h2 class="title"><span>Update</span> Category</h2>
+    <div class="content-update-category" *ngIf="data">
+        <p><span>ID : </span>{{data.id}}</p>
+        <p><span>Name : </span>{{data.name}}</p>
+        <p><span>Change Name : </span></p>
+        <p class="changeName"><input type="text" placeholder="Enter new name category" [(ngModel)]="newName"><button
+                (click)="changeName()">change name</button></p>
+        <p><span>Storage ID : </span>{{data.storageId}}</p>
+        <p><span>Create At : </span>{{data.createdAt | date:'medium'}}</p>
+        <p><span>Update At : </span>{{data.updatedAt | date:'medium'}}</p>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

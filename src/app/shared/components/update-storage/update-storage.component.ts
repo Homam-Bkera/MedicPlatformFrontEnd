@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
-import { UpdateStorage } from '../../interfacce/update-storage';
 import { FormsModule } from '@angular/forms';
-import { from } from 'rxjs';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { CommonModule } from '@angular/common';
 

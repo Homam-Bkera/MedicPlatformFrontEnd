@@ -52,4 +52,12 @@ export class AuthService {
     return sessionStorage.getItem('ROLE');
   }
 
+  setStorageId(storageId: number) {
+    sessionStorage.setItem('STORAGEID', JSON.stringify(storageId));
+  }
+
+  getStorageId() {
+    return sessionStorage.getItem('STORAGEID');
+  }
+
 }

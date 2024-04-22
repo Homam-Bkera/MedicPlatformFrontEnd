@@ -1,0 +1,62 @@
+<div class="component-add-medicicine">
+    <p class="title"><span> Add </span>Medicne</p>
+    <form [formGroup]="AddMedicneForm" (onsubmit)="onSubmitForm()">
+        <div class="content-add-medicine">
+            <div class="image-medicine">
+                <img src="../../../../assets/medicine.icon..png" alt="this is image">
+                <input type="file" (change)="onFileCChange($event)">
+                <p class="message-wrong" *ngIf="AddMedicneForm.controls['image'].errors?.['overSize']">The file size
+                    must be
+                    200 bytes or less.</p>
+                <p class="message-wrong" *ngIf="AddMedicneForm.controls['image'].errors?.['typeInvalid']">The file type
+                    must be [png || jpeg].</p>
+            </div>
+            <div class="info-medicine">
+                <div class="Name">
+                    <div class="input-control">
+                        <span>Name:</span>
+                        <input formControlName="name" placeholder="Enter Medicine Name" type="text">
+                        <p class="message-wrong"
+                            *ngIf="AddMedicneForm.controls['name'].invalid&&AddMedicneForm.controls['name'].touched&&AddMedicneForm.controls['name'].dirty">
+                            Enter the name of the new medicine</p>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="input-control">
+                        <span>price:</span>
+                        <input formControlName="price" placeholder="Enter Medicine price" type="text">
+                        <p class="message-wrong"
+                            *ngIf="AddMedicneForm.controls['price'].invalid&&AddMedicneForm.controls['price'].touched&&AddMedicneForm.controls['price'].dirty">
+                            Enter the price of the new medicine</p>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <div class="input-control">
+                        <span>quantity:</span>
+                        <input formControlName="quantity" placeholder="Enter Medicine quantity" type="text">
+                        <p class="message-wrong"
+                            *ngIf="AddMedicneForm.controls['quantity'].invalid&&AddMedicneForm.controls['quantity'].touched&&AddMedicneForm.controls['quantity'].dirty">
+                            Enter the amount of new medicine</p>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="input-control">
+                        <span>category:</span>
+                        <select class="dropdown" formControlName="selectCategory">
+                            <option [selected]="category.id" *ngFor="let category of allCategories;let index = index"
+                                [value]="category.id">
+                                {{1+index}} - {{category.name}}
+                            </option>
+                        </select>
+                        <p class="message-wrong"
+                            *ngIf="AddMedicneForm.controls['selectCategory'].invalid&&AddMedicneForm.controls['selectCategory'].touched">
+                            Choose in which category you want to add the new medicine
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <button (click)="onSubmitForm()" class="btn-add">Add Medicne</button> -->
+        <button [disabled]="AddMedicneForm.invalid" (click)="onSubmitForm()" class="btn-add">Add Medicne</button>
+    </form>
+</div>

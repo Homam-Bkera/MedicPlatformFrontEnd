@@ -19,7 +19,7 @@ export class NavbarComponent {
 
   constructor(
     public AuthService: AuthService,
-    private tokenStorage: TokenStorageService,
+    public tokenStorage: TokenStorageService,
     private wallet: WalletService,
   ) {
     this.AuthService.isLogged();

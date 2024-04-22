@@ -1,0 +1,89 @@
+.component-update-category {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    box-shadow: rgba(37, 37, 37, 0.24) 0px 3px 8px;
+    padding: 40px;
+    padding-top: 5px;
+    border-radius: 7px;
+    margin-top: 40px;
+
+    .title {
+        text-align: center;
+        margin-top: 20px;
+
+        span {
+            color: var(--main-color);
+            font-size: 2rem;
+        }
+    }
+
+    .content-update-category {
+        padding-bottom: 20px;
+
+        p {
+            margin-top: 20px;
+
+            span {
+                font-weight: bold;
+            }
+
+            input {
+                border-radius: 7px;
+                border: 1px solid rgb(204, 202, 202);
+                transition: 0.3s ease-in-out;
+                font-size: 1rem;
+                padding: 10px 15px;
+                width: 100%;
+
+                &:hover {
+                    background-color: rgba(161, 109, 41, 0.007);
+                    outline: 1px solid var(--main-color);
+                }
+
+                &:focus {
+                    background-color: rgba(161, 109, 41, 0.007);
+                    outline: 1px solid var(--main-color);
+                }
+            }
+
+            button {
+                padding: 10px 30px;
+                border-radius: 7px;
+                text-wrap: nowrap;
+                color: white;
+                background-color: var(--main-color);
+                font-size: 1.1rem;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                border: 1px solid var(--main-color);
+
+                &:hover {
+                    color: var(--main-color);
+                    background-color: white;
+                    border: 1px solid var(--main-color);
+                }
+            }
+        }
+
+        .changeName {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    #spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        background-color: rgba(255, 255, 255, 0.568);
+    }
+}

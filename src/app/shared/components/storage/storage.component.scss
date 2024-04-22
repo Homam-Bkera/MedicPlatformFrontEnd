@@ -1,0 +1,167 @@
+.component-storage {
+    position: relative;
+    z-index: 1;
+
+    .content-storage {
+        .title {
+            margin: 20px auto;
+
+            h1 {
+                text-align: center;
+                color: black;
+
+                span {
+                    color: var(--main-color);
+                    font-size: 2.4rem;
+                }
+            }
+        }
+
+        .add-category {
+            width: 100%;
+
+            form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                input {
+                    border-radius: 7px 0px 0px 7px;
+                    border: 1px solid rgb(204, 202, 202);
+                    transition: 0.3s ease-in-out;
+                    font-size: 1rem;
+                    padding: 7px 15px;
+                    width: 70%;
+
+                    &:hover {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+
+                    &:focus {
+                        background-color: rgba(161, 109, 41, 0.007);
+                        outline: 1px solid var(--main-color);
+                    }
+                }
+
+                button {
+                    padding: 7px 15px;
+                    border-radius: 0px 7px 7px 0px;
+                    color: white;
+                    background-color: var(--main-color);
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    transition: 0.3s;
+                    cursor: pointer;
+                    border: 1px solid var(--main-color);
+                    opacity: 0.8;
+                    text-wrap: nowrap;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .all-category {
+            h4 {
+                margin-top: 20px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid black;
+            }
+
+            .categories {
+                margin-top: 5px;
+
+                .category {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 5px;
+
+                    background-color: rgb(247, 246, 246);
+                    margin: 3px 0px;
+                    padding: 10px 5px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        transform: scale(1.01);
+                    }
+
+                    &:nth-child(odd) {
+                        background-color: rgb(233, 233, 233);
+                    }
+
+                    .links-category {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        a {
+                            margin: 0px 8px;
+                            padding: 7px 15px;
+                            border-radius: 7px;
+                            font-size: 1rem;
+                            transition: 0.3s;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+
+                        .delete {
+                            background-color: rgba(255, 0, 0, 0.63);
+                            color: white;
+                            border: 1px solid white;
+
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.63);
+                                color: rgba(255, 0, 0, 0.63);
+                                border: 1px solid rgba(255, 0, 0, 0.63);
+                            }
+                        }
+
+                        .view {
+                            background-color: rgb(27 111 193);
+                            color: white;
+                            border: 1px solid white;
+
+                            &:hover {
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(27 111 193);
+                                border: 1px solid rgb(27 111 193);
+                            }
+                        }
+
+                        .update {
+                            background-color: rgb(8, 185, 97);
+                            color: white;
+                            border: 1px solid white;
+
+                            &:hover {
+                                background-color: rgb(255, 255, 255);
+                                color: rgb(8, 185, 97);
+                                border: 1px solid rgb(8, 185, 97);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    #spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.493);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 11;
+    }
+}
