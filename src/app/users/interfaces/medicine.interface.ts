@@ -1,8 +1,8 @@
 export interface Medicine {
     id: number,
-    srcImage: string,
-    title: string,
+    image: string,
+    name: string,
     price: number,
-    store: string,
-    details: string,
+    qty: number,
+    categoryId: number,
 }

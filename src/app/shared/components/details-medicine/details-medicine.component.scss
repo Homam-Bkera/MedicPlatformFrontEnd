@@ -1,0 +1,121 @@
+.details-medicine-component {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+
+    .content-details-medicine {
+        .title {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            span {
+                color: var(--main-color);
+            }
+        }
+
+        .info-details-medicine {
+            h3 {
+                background-color: var(--main-color);
+                border-radius: 7px;
+                padding: 7px 10px;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            >div {
+                padding: 0px 20px;
+
+                .input-control {
+                    padding: 0px 0px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+
+                    span {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                        opacity: 0.7;
+                    }
+
+                    .control {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 12px;
+
+
+
+                        input {
+                            border-radius: 7px;
+                            border: 1px solid rgb(204, 202, 202);
+                            transition: 0.3s ease-in-out;
+                            font-size: 1rem;
+                            padding: 10px 5px;
+                            width: 65%;
+
+                            &:hover {
+                                background-color: rgba(161, 109, 41, 0.007);
+                                outline: 1px solid var(--main-color);
+                            }
+
+                            &:focus {
+                                background-color: rgba(161, 109, 41, 0.007);
+                                outline: 1px solid var(--main-color);
+                            }
+                        }
+
+                        button {
+                            width: 33%;
+                            padding: 10px 5px;
+                            font-size: 1rem;
+                            border-radius: 7px;
+                            border: 0px;
+                            font-weight: bold;
+                            transition: 0.3s;
+                            cursor: pointer;
+                            color: var(--main-color);
+                            background-color: white;
+                            border: 1px solid var(--main-color);
+                            text-wrap: nowrap;
+
+                            &:hover {
+                                color: white;
+                                background-color: var(--main-color);
+                                border: 1px solid var(--main-color);
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    margin-bottom: 12px;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    #spinner {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100Vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.568);
+        z-index: 11;
+    }
+}

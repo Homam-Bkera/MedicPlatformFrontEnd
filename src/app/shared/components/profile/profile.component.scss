@@ -55,6 +55,67 @@
                         background-color: white;
                     }
                 }
+
+                .input-control {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 15px;
+                    position: relative;
+
+                    span {
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                        font-size: 1rem;
+                    }
+
+                    .control {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        input {
+                            border-radius: 7px;
+                            border: 1px solid rgb(204, 202, 202);
+                            height: 2.2rem;
+                            transition: 0.3s ease-in-out;
+                            font-size: 1rem;
+                            padding: 0px 5px;
+                            width: 70%;
+
+                            &:hover {
+                                background-color: rgba(161, 109, 41, 0.007);
+                                outline: 1px solid var(--main-color);
+                            }
+
+                            &:focus {
+                                background-color: rgba(161, 109, 41, 0.007);
+                                outline: 1px solid var(--main-color);
+                            }
+                        }
+
+                        button {
+                            width: 28%;
+
+                            padding: 10px 30px;
+                            border-radius: 7px;
+                            color: white;
+                            background-color: var(--main-color);
+                            font-weight: bold;
+                            transition: 0.3s;
+
+                            cursor: pointer;
+                            border: 1px solid var(--main-color);
+
+                            &:hover {
+                                color: var(--main-color);
+                                background-color: white;
+                                border: 1px solid var(--main-color);
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }

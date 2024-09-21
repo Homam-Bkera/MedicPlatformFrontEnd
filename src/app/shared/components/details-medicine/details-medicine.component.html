@@ -1,0 +1,59 @@
+<div class="details-medicine-component">
+    <div class="content-details-medicine">
+        <h2 class="title"><span>Details</span> Medicine</h2>
+        <div *ngIf="detailsMedicine" class="info-details-medicine">
+            <h3>- Details Medicine</h3>
+            <div class="details-medicine">
+                <p><span>Medicine Id : </span>{{detailsMedicine.id}}</p>
+                <p><span>From Category Id : </span>{{detailsMedicine.categoryId}}</p>
+                <p><span>medicine Name : </span>{{detailsMedicine.name}}</p>
+                <div class="input-control">
+                    <span>New medicine name:</span>
+                    <p>Enter a new name if you want to change the name</p>
+                    <div class="control">
+                        <input type="text" name="name" placeholder="Enter New Name" [(ngModel)]="name" />
+                        <button (click)="updateName()">Apply Change</button>
+                    </div>
+                </div>
+                <p><span>medicine Image : </span>{{detailsMedicine.image|json}}</p>
+                <p><span>medicine Quantity : </span>{{detailsMedicine.qty}}</p>
+                <div class="input-control">
+                    <span>New Medicine Quantity :</span>
+                    <p>Enter the quantity if you wish to change the quantity</p>
+                    <div class="control">
+                        <input type="text" name="quantity" placeholder="Enter New Quantity" [(ngModel)]="qty" />
+                        <button (click)="updateQTY()">Apply Change</button>
+                    </div>
+                </div>
+                <p><span>medicine Price : </span>{{detailsMedicine.price}}</p>
+                <div class="input-control">
+                    <span>New Medicine Price :</span>
+                    <p>Enter the new price if you want to change the price</p>
+                    <div class="control">
+                        <input type="text" name="price" placeholder="Enter New Price" [(ngModel)]="price" />
+                        <button (click)="updatePrice()">Apply Change</button>
+                    </div>
+                </div>
+                <p><span>medicine Created At : </span>{{detailsMedicine.createdAt | date:'medium'}}</p>
+                <p><span>medicine Update At : </span>{{detailsMedicine.updatedAt | date:'medium'}}</p>
+            </div>
+            <h3>- From Category</h3>
+            <div class="details-category">
+                <p><span>Category Id : </span>{{detailsMedicine.Category.id}}</p>
+                <p><span>Category Name : </span>{{detailsMedicine.Category.name}}</p>
+                <p><span>From Storage Id : </span>{{detailsMedicine.Category.storageId}}</p>
+                <p><span>Category Created At : </span>{{detailsMedicine.Category.createdAt | date:'medium'}}</p>
+                <p><span>Category Updated At : </span>{{detailsMedicine.Category.updatedAt | date:'medium'}}</p>
+            </div>
+            <h3>- From Storage</h3>
+            <div class="details-storage">
+                <p><span>Storage Id : </span>{{detailsMedicine.Category.id}}</p>
+                <p><span>Storage Name : </span>{{detailsMedicine.Category.name}}</p>
+                <p><span>From Storage Id : </span>{{detailsMedicine.Category.storageId}}</p>
+                <p><span>Storage Created At : </span>{{detailsMedicine.Category.createdAt | date:'medium'}}</p>
+                <p><span>Storage Updated At : </span>{{detailsMedicine.Category.updatedAt | date:'medium'}}</p>
+            </div>
+        </div>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

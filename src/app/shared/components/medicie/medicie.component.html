@@ -1,0 +1,13 @@
+<div class="component-medicie">
+    <div class="content-medicie">
+        <!-- <img src="{{medicine.image}}" alt="image for medicie"> -->
+        <img src="../../../../assets/medic.jpg" alt="image for medicie">
+        <p class="name">{{medicine.id}} - {{medicine.name}}</p>
+        <div class="info-medicie">
+            <p class="price"><span>Price : </span>{{medicine.price}}</p>
+            <p class="quantity"><span>Quantity : </span>{{medicine.qty}}</p>
+            <p class="categoryId"><span>Category ID : </span>{{medicine.categoryId}}</p>
+        </div>
+        <a class="details" [routerLink]="['/admin/details-medicine',medicine.id]">Show More Details</a>
+    </div>
+</div>

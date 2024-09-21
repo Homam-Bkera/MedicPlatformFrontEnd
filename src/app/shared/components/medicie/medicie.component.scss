@@ -1,0 +1,39 @@
+.component-medicie {
+
+    .content-medicie {
+        img {
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        .name {
+            background-color: rgb(228, 226, 226);
+            padding: 15px 5px;
+            font-weight: bold;
+        }
+
+        .info-medicie {
+            padding: 10px;
+
+            p {
+                margin-top: 7px;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid black;
+            padding: 8px;
+            color: var(--main-color);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}

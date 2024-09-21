@@ -1,6 +1,14 @@
-<div class="cards">
-    <div class="card" *ngFor="let medicine of medicines">
-        <!-- <app-card [medicine]="medicine"></app-card> -->
-        <app-card [medicine]="medicine" (item)="addToCart($event)"></app-card>
+<div class="component-all-medicine">
+    <div class="content-all-medicine">
+        <div class="cards">
+            <div class="card" *ngFor="let medicine of medicines">
+                <!-- <app-card [medicine]="medicine"></app-card> -->
+                <app-card [medicine]="medicine" (item)="addToCart($event)"></app-card>
+            </div>
+        </div>
+        <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+        <div class="no-meds" *ngIf="medicines&&medicines.length==0">
+            <p class="message-no-meds">There is no medicine in this category</p>
+        </div>
     </div>
 </div>

@@ -17,8 +17,14 @@
             <div class="cash">
                 <p class="current-cash">Current Cash :<span>{{profile?.data?.Wallet?.cash}}</span></p>
                 <p class="last-charge">Last Charge :<span>{{profile?.data?.Wallet?.createdAt}}</span></p>
-                <a class="link"> Charge Wallet</a>
+                <div class="input-control">
+                    <span>Charge Wallet :</span>
+                    <div class="control">
+                        <input name="wallet" placeholder="charge wallet" [(ngModel)]="charge" />
+                        <button (click)="chargerWallet()">Charge Wallet</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</div>

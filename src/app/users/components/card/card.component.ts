@@ -24,6 +24,7 @@ export class CardComponent {
   // Add() {
   //   this.item.emit({ item: this.medicine, quantity: this.amount })
   // }
+
   add() {
     this.doneAdd = true;
     this.item.emit({ item: this.medicine, quantity: this.amount });

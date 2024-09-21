@@ -5,11 +5,13 @@ import { Profile } from '../../interfaces/profile.interface';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { WalletService } from '../../../auth/services/wallet.service';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
@@ -17,11 +19,13 @@ export class ProfileComponent implements OnInit {
 
   profile?: Profile;
   role: string | null = '';
+  charge: number = 0;
 
   constructor(
     private ProfileService: ProfileService,
     private TokenStorage: TokenStorageService,
     private authService: AuthService,
+    private wallet: WalletService,
   ) {
   }
 
@@ -38,6 +42,13 @@ export class ProfileComponent implements OnInit {
 
   getRole() {
     this.role = this.authService.getRole();
+  }
+
+  chargerWallet() {
+    let data = { cash: this.charge }
+    this.wallet.setWallet(data).subscribe(res => {
+      console.log(res);
+    })
   }
 
 }

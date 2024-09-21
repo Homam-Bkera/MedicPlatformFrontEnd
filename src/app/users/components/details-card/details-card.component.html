@@ -2,19 +2,29 @@
     <div class="image-details">
         <img class="image" src="../../../../assets/medic.jpg" alt="">
     </div>
-    <div class="content-details">
+    <div class="content-details" *ngIf="infoMed">
+
         <p class="title-details">Title Details</p>
-        <p class="All-details"> All DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll
-            DetailsAll DetailsAll DetailsAll DetailsAll Details</p>
-        <p class="amount-details">Amount : 4</p>
-        <p class="by-store">By Store : sotre 1</p>
+        <div class="info-medic">
+            <p><span>Quantity :</span> {{infoMed.qty}}</p>
+            <p><span>CreatedAt :</span> {{infoMed.createdAt |date}}</p>
+            <p><span>UpdatedAt :</span> {{infoMed.updatedAt |date}}</p>
+            <div>
+                <h3>- Info Category :</h3>
+                <p><span>Name Category :</span> {{infoMed.Category.name}}</p>
+                <p><span>CreatedAt Category :</span> {{infoMed.Category.createdAt |date}}</p>
+                <p><span>UpdatedAt Category :</span> {{infoMed.Category.updatedAt |date}}</p>
+            </div>
+            <div>
+                <h3>- Info Storage :</h3>
+                <p><span>Name Storage :</span> {{infoMed.Category.Storage.name}}</p>
+                <p><span>Loaction Storage :</span> {{infoMed.Category.Storage.location}}</p>
+                <p><span>CreatedAt Storage :</span> {{infoMed.Category.Storage.createdAt |date}}</p>
+                <p><span>UpdatedAt Storage :</span> {{infoMed.Category.Storage.updatedAt |date}}</p>
+            </div>
+        </div>
+
+
         <div class="add-btn">
             <button class="add-cart" *ngIf="addButton" (click)="addButton=false">Add Cart</button>
             <div class="add-amount" *ngIf="!addButton&&!doneAdd">
@@ -28,5 +38,6 @@
                 </span>
             </div>
         </div>
+
     </div>
 </div>

@@ -6,6 +6,7 @@ import { AddMedicineComponent } from "./components/add-medicine/add-medicine.com
 import { StorageComponent } from "../shared/components/storage/storage.component";
 import { ViewCategoryComponent } from "../shared/components/view-category/view-category.component";
 import { UpdateCategoryComponent } from "../shared/components/update-category/update-category.component";
+import { DetailsMedicineComponent } from "../shared/components/details-medicine/details-medicine.component";
 
 export const ADMIN_ROUTES: Routes = [
     { path: '', component: HomeComponent },
@@ -15,5 +16,6 @@ export const ADMIN_ROUTES: Routes = [
     { path: 'storage', component: StorageComponent },
     { path: 'view-category', component: ViewCategoryComponent },
     { path: 'update-category', component: UpdateCategoryComponent },
+    { path: 'details-medicine/:id', component: DetailsMedicineComponent },
     { path: '**', redirectTo: '', pathMatch: "full" },
 ];

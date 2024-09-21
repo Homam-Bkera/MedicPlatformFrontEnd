@@ -1,18 +1,71 @@
-.cards {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-
-    .card {
-        margin-top: 20px;
-        width: 280px;
-    }
-
-    @media (max-width: 640px) {
-        .card {
+.component-all-medicine {
+    .content-all-medicine {
+        .cards {
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .card {
+                margin-top: 20px;
+                width: 280px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                overflow: hidden;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 300%;
+                    height: 200px;
+                    background-color: rgba(255, 255, 255, 0.24);
+                    position: absolute;
+                    top: 50%;
+                    left: -190%;
+                    transform: rotate(90deg);
+                    transition: 0.5s ease-in-out;
+
+                }
+
+                &:hover:after {
+                    left: 100%;
+                }
+
+            }
+
+            @media (max-width: 640px) {
+                .card {
+                    width: 100%;
+                }
+            }
+        }
+
+        #spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.568);
+        }
+
+        .no-meds {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .message-no-meds {
+                width: 80%;
+                background-color: #df6a6a82;
+                padding: 10px 20px;
+                border-radius: 8px;
+                margin-top: 20px;
+                text-align: center;
+
+            }
         }
     }
 }

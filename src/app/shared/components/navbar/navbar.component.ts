@@ -34,16 +34,14 @@ export class NavbarComponent {
   }
 
   getWallet() {
-    if (this.tokenStorage.getToken()) {
-      this.wallet.getWallet(this.tokenStorage.getToken()).subscribe((res: any) => {
-        if (res.data != null) {
-          this.userWallet = res.data.cash;
-        } else {
-          this.userWallet = "0";
-        }
-      })
-    }
+    //   if (this.tokenStorage.getToken()) {
+    //     this.wallet.getWallet(this.tokenStorage.getToken()).subscribe((res: any) => {
+    //       if (res.data != null) {
+    //         this.userWallet = res.data.cash;
+    //       } else {
+    //         this.userWallet = "0";
+    //       }
+    //     })
+    //   }
   }
-
-
 }

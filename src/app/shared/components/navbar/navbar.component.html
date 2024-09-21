@@ -91,7 +91,7 @@
             <li routerLink="{{ role }}/profile">
                 <i class="fa fa-user-circle"></i>Pofile
             </li>
-            <li><i class="fa fa-sign-out"></i>Sign out</li>
+            <li routerLink="auth" (click)="AuthService.logout()"><i class="fa fa-sign-out"></i>Sign out</li>
         </ul>
     </div>
 </div>

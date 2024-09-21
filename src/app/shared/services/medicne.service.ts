@@ -21,4 +21,17 @@ export class MedicneService {
     })
   }
 
+  getOne(id: number) {
+    return this.http.get(`${baseUrl}/medicine/one?id=${id}`)
+  }
+
+  updateMedicine(data: any, id: number) {
+    let token = this.token.getToken();
+    return this.http.put(`${baseUrl}/medicine?id=${id}`, data, {
+      headers: {
+        Authorization: token,
+      }
+    })
+  }
+
 }

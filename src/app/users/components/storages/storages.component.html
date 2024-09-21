@@ -1,1 +1,14 @@
-<p>storages works!</p>
+<div class="component-storages">
+    <div class="contnet-storages">
+        <div class="title"><span>All</span> Storages</div>
+        <h3>Storages :</h3>
+        <div class="Storages">
+            <div class="storage" *ngFor="let storage of AllStorage" (click)="selectStorage(storage.id)">
+                <img class="image" src="../../../../assets/store.png" alt="">
+                <div class="name">Name : <span>{{storage.name}}</span></div>
+                <div class="location">Location : <span>{{storage.location}}</span></div>
+            </div>
+        </div>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

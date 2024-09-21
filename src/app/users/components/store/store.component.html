@@ -1,1 +1,13 @@
-<p>store works!</p>
+<div class="store-component">
+    <div class="content-store">
+        <div class="title"><span *ngIf="storeInfo">{{storeInfo.name}}</span> Storage</div>
+        <h4>All category in the storage :</h4>
+        <div class="all-category" *ngIf="storeInfo">
+            <div class="category" routerLink="../../allMedicine/{{item.id}}" *ngFor="let item of storeInfo.Categories">
+                <p>{{item.name}}</p>
+                <span>></span>
+            </div>
+        </div>
+    </div>
+    <app-spinner *ngIf="visibleSpinner" id="spinner"></app-spinner>
+</div>

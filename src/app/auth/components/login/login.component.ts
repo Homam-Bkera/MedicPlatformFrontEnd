@@ -40,8 +40,10 @@ export class LoginComponent {
     this.bindingData(form);
     this.AuthService.login(this.user).subscribe(res => {
       this.tokenStorage.setToken(res.token);
-      this.AuthService.setRole(res.data.role)
-      this.AuthService.setStorageId(res.data.StorageAdmins[0].storageId)
+      this.AuthService.setRole(res.data.role);
+      if (res.data.role == 'admin') {
+        this.AuthService.setStorageId(res.data.StorageAdmins[0].storageId)
+      }
       this.AuthService.isLogged();
       this.navigate(res.data.role);
     }, err => {

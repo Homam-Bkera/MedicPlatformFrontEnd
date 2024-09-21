@@ -1,58 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { UsersModule } from '../../users.module';
+import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from '../../../shared/services/category.service';
+import { SpinnerComponent } from '../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-all-medicine',
   standalone: true,
-  imports: [CardComponent, UsersModule],
+  imports: [CardComponent, UsersModule, SpinnerComponent],
   templateUrl: './all-medicine.component.html',
   styleUrl: './all-medicine.component.scss'
 })
-export class AllMedicineComponent {
+export class AllMedicineComponent implements OnInit {
 
-  medicines: any = [
-    {
-      id: 1,
-      srcImage: "../../../../assets/medic.jpg",
-      title: "title title title title titletitletitletitle",
-      price: 45,
-      store: "store 1",
-      details: "details paragraph details paragraphdetails paragraphdetails paragraphdetails paragraphdetails paragraphdetails paragraphdetails paragraphdetails paragraphdetails paragraphdetaisparagraphdetailsparagraphdetailsparagraphdetailsparagraphdetailsparagraphdetailsparagraphdetailsparagraphdetails paragraph",
-    },
-    {
-      id: 2,
-      srcImage: "../../../../assets/medic.jpg",
-      title: "anything",
-      price: 4,
-      store: "store 1",
-      details: "details paragraph",
-    },
-    {
-      id: 3,
-      srcImage: "../../../../assets/medic.jpg",
-      title: "anything",
-      price: 12,
-      store: "store 1",
-      details: "details paragraph",
-    },
-    {
-      id: 3,
-      srcImage: "../../../../assets/medic.jpg",
-      title: "anything",
-      price: 12,
-      store: "store 1",
-      details: "details paragraph",
-    },
-    {
-      id: 3,
-      srcImage: "../../../../assets/medic.jpg",
-      title: "anything",
-      price: 12,
-      store: "store 1",
-      details: "details paragraph",
-    },
-  ];
+  medicines: any;
+  visibleSpinner: boolean = false;
+
+
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService) {
+
+  }
+
+  ngOnInit(): void {
+    this.visibleSpinner = true;
+    this.route.params.subscribe(params => {
+      this.categoryService.getOneCategory(params['id']).subscribe((res: any) => {
+        this.medicines = res.data.Medicines;
+        this.visibleSpinner = false;
+      })
+    })
+  }
+
 
   addToCart(event: any) {
     console.log(event);

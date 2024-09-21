@@ -1,1 +1,13 @@
-<p>view-category works!</p>
+<div class="component-view-category">
+    <div class="content-category">
+        <div class="title">
+            <h1><span>- C</span>ategory <span>-</span></h1>
+        </div>
+        <div class="all-medicines">
+            <h3>- all medicies</h3>
+            <div class="medicines">
+                <app-medicie class="medicine" *ngFor="let meds of AllMeds" [medicine]="meds"></app-medicie>
+            </div>
+        </div>
+    </div>
+</div>
